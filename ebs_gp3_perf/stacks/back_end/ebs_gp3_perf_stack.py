@@ -220,12 +220,12 @@ class EbsGp3PerformanceTestStack(core.Stack):
         """
         # Read BootStrap Script):
         try:
-            with open("ebs_gp3_perf/stacks/back_end/bootstrap_scripts/create_and_attach_volumes.sh",
+            with open("../scripts/create_and_attach_volumes.sh",
                       encoding="utf-8",
                       mode="r"
                       ) as f:
                 create_and_attach_volumes = f.read()
-            with open("ebs_gp3_perf/stacks/back_end/bootstrap_scripts/gp3_throughput_benchmark_with_fio.sh",
+            with open("../scripts/gp3_throughput_benchmark_with_fio.sh",
                       encoding="utf-8",
                       mode="r"
                       ) as f:
