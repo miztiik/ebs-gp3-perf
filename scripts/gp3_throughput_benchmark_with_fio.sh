@@ -41,6 +41,34 @@ function create_fio_test_configs() {
 mkdir -p ${PERF_SCRIPTS_DIR} \
     && cd ${PERF_SCRIPTS_DIR} \
 
+cat > '4kb_16threads.fio' << "EOF"
+[4kb_16threads]
+filename=${DEV_ID}
+direct=1
+rw=${TEST_MODE}
+bs=16k
+size=1G
+numjobs=16
+time_based=1
+runtime=10
+norandommap=1
+group_reporting=1
+EOF
+
+cat > '8kb_16threads.fio' << "EOF"
+[8kb_16threads]
+filename=${DEV_ID}
+direct=1
+rw=${TEST_MODE}
+bs=16k
+size=1G
+numjobs=16
+time_based=1
+runtime=10
+norandommap=1
+group_reporting=1
+EOF
+
 cat > '16kb_16threads.fio' << "EOF"
 [16kb_16threads]
 filename=${DEV_ID}

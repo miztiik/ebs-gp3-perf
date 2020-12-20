@@ -3,6 +3,7 @@
 import csv
 import logging
 import json
+import datetime
 import os
 
 
@@ -19,7 +20,7 @@ class GlobalArgs:
     FIO_TEST_CONFIG = {
         "output_f_prefix": "/var/log/miztiik-automation-apps-",
         "threads": 16,
-        "block_size": [16, 32, 64, 128, 256],
+        "block_size": [4, 8, 16, 32, 64, 128, 256],
         "mode": "randwrite",
         "devs_map": {
             "nvme1n1": "gp3_throughput_1000",
@@ -64,7 +65,7 @@ def log_processor():
             # Parse our results
             _temp_result["test_name"] = GlobalArgs.FIO_TEST_CONFIG["devs_map"][_k]
             _temp_result["mode"] = _d["jobs"][0]["job options"]["rw"]
-            _temp_result["block_size"] = _d["jobs"][0]["job options"]["bs"]
+            _temp_result["block_size"] = _i
             _temp_result["threads"] = _d["jobs"][0]["job options"]["numjobs"]
             _temp_result["w_iops"] = round(_d["jobs"][0]["write"]["iops"])
             _temp_result["bw_in_mibs"] = round(
@@ -91,5 +92,6 @@ logging.basicConfig(
 
 perf_results = log_processor()
 print(perf_results)
-json_to_csv(perf_results, "fio_results.csv")
+json_to_csv(
+    perf_results, f"fio_results_{round(datetime.datetime.now().timestamp())}.csv")
 # json_to_csv(a, "fio_results.csv")
