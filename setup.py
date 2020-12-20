@@ -9,7 +9,7 @@ setuptools.setup(
     name="ebs_gp3_perf",
     version="0.0.1",
 
-    description="An empty CDK Python app",
+    description="ebs-gp3-perf",
     long_description=long_description,
     long_description_content_type="text/markdown",
 
@@ -19,7 +19,7 @@ setuptools.setup(
     packages=setuptools.find_packages(where="ebs_gp3_perf"),
 
     install_requires=[
-        "aws-cdk.core==1.77.0",
+        "aws-cdk.core==1.79.0",
     ],
 
     python_requires=">=3.6",
