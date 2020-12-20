@@ -48,7 +48,7 @@ VOL_IDS_LOG_NAME=${APP_DIR}/fio_vol_ids.log
 echo "Creating gp3 volume with 50G size and 1000MiBs throughput & 4000IOPS, will be attached as nvme1n1"  | tee ${LOG_FILE}
 gp3_vol_1=$(aws ec2 create-volume \
  --availability-zone ${EC2_AVAIL_ZONE} \
- --size 51 \
+ --size 201 \
  --volume-type gp3 \
  --iops 4000 \
  --throughput 1000 \
@@ -67,7 +67,7 @@ echo "${gp3_vol_1}" >> ${VOL_IDS_LOG_NAME}
 echo "Creating gp3 volume_1 with 50G size and 1000MiBs throughput for RAID-0, will be attached as md0"  | tee ${LOG_FILE}
 gp3_raid_vol_1=$(aws ec2 create-volume \
  --availability-zone ${EC2_AVAIL_ZONE} \
- --size 52 \
+ --size 202 \
  --volume-type gp3 \
  --iops 4000 \
  --throughput 1000 \
@@ -82,7 +82,7 @@ echo "${gp3_raid_vol_1}" >> ${VOL_IDS_LOG_NAME}
 echo "Creating gp3 volume_2 with 50G size and 1000MiBs throughput for RAID-0, will be attached as md0"  | tee ${LOG_FILE}
 gp3_raid_vol_2=$(aws ec2 create-volume \
  --availability-zone ${EC2_AVAIL_ZONE} \
- --size 52 \
+ --size 202 \
  --volume-type gp3 \
  --iops 4000 \
  --throughput 1000 \
@@ -119,7 +119,7 @@ echo "${io2_iops_vol_1}" >> ${VOL_IDS_LOG_NAME}
 echo "Creating gp3 volume with 16000IOPS, will be attached as nvme5n1"  | tee ${LOG_FILE}
 gp3_iops_vol_1=$(aws ec2 create-volume \
  --availability-zone ${EC2_AVAIL_ZONE} \
- --size 55 \
+ --size 255 \
  --volume-type gp3 \
  --iops 16000 \
  --throughput 1000 \

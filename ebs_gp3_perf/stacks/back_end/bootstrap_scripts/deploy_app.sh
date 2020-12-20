@@ -181,6 +181,14 @@ EOF
 #   instruction
 #   exit 1
 
-install_libs >> "${LOG_FILE}"
-install_cw_agent >> "${LOG_FILE}"
-install_fio >> "${LOG_FILE}"
+install_libs        | tee "${LOG_FILE}"
+install_cw_agent    | tee "${LOG_FILE}"
+install_fio         | tee "${LOG_FILE}"
+clone_git_repo      | tee "${LOG_FILE}"
+
+# FIO TESTS
+sh ${APP_DIR}/scripts/create_and_attach_volumes.sh
+# sh ${APP_DIR}/scripts/detach_and_delete_volumes.sh
+# sh ${APP_DIR}/scripts/gp3_throughput_benchmark_with_fio.sh
+# python3 ${APP_DIR}/scripts/collate_metrics.py
+

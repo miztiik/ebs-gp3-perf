@@ -87,16 +87,18 @@ class EbsGp3PerformanceTestStack(core.Stack):
             user_data_causes_replacement=True,
             user_data=_ec2.UserData.custom(
                 user_data),
-            block_devices=[
-                _ec2.BlockDevice(
-                    device_name="/dev/sda1",
-                    volume=_ec2.BlockDeviceVolume.ebs(
-                        volume_size=10,
-                        encrypted=False,
-                        delete_on_termination=True
-                    )
-                )
-            ]
+            # Setting root volume size is not working
+            # https://aws.amazon.com/premiumsupport/knowledge-center/cloudformation-root-volume-property/
+            # block_devices=[
+            #     _ec2.BlockDevice(
+            #         device_name="/dev/sda1",
+            #         volume=_ec2.BlockDeviceVolume.ebs(
+            #             volume_size=30,
+            #             encrypted=False,
+            #             delete_on_termination=True
+            #         )
+            #     )
+            # ]
         )
 
         """

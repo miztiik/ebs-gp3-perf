@@ -35,7 +35,9 @@ function detach_and_delete_vols(){
 }
 
 
+# Remove RAID-O Mount
+rm -rf /dev/md0
 
 # After sucessfully deleting clean-up the log file
 detach_and_delete_vols && \
-> ${VOL_IDS_LOG_NAME}
+mv ${VOL_IDS_LOG_NAME} ${VOL_IDS_LOG_NAME}_deleted_`date +%s`
