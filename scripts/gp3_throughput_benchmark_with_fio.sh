@@ -146,17 +146,12 @@ function run_fio_perf_tests(){
         do
             for _t in "randwrite"
                 do
-                    printf "Beginning 16kb_16threads test on ${_d} for test ${_t}\n"
-                    DEV_ID=/dev/${_d} TEST_MODE=${_t} fio 16kb_16threads.fio --output-format=json --output=/var/log/miztiik-automation-apps-16kb_16threads_${_d}_${_t}.log
-                    printf "Beginning 32kb_16threads test on  ${_d} for test ${_t}\n"
-                    DEV_ID=/dev/${_d} TEST_MODE=${_t} fio 32kb_16threads.fio --output-format=json --output=/var/log/miztiik-automation-apps-32kb_16threads_${_d}_${_t}.log
-                    printf "Beginning 64kb_16threads test on ${_d} for test ${_t}\n"
-                    DEV_ID=/dev/${_d} TEST_MODE=${_t} fio 64kb_16threads.fio --output-format=json --output=/var/log/miztiik-automation-apps-64kb_16threads_${_d}_${_t}.log
-                    printf "Beginning 128kb_16threads test on ${_d} for test ${_t}\n"
-                    DEV_ID=/dev/${_d} TEST_MODE=${_t} fio 128kb_16threads.fio --output-format=json --output=/var/log/miztiik-automation-apps-128kb_16threads_${_d}_${_t}.log
-                    printf "Beginning 256kb_16threads test on ${_d} for test ${_t}\n"
-                    DEV_ID=/dev/${_d} TEST_MODE=${_t} fio 256kb_16threads.fio --output-format=json --output=/var/log/miztiik-automation-apps-256kb_16threads_${_d}_${_t}.log
-                    printf "End of ${_t} tests\n"
+                    for _b in "4" "8" "16" "32" "64" "128" "256"
+                        do
+                            printf "Beginning ${_b}kb_16threads test on ${_d} for test ${_t}\n"
+                            DEV_ID=/dev/${_d} TEST_MODE=${_t} fio ${_b}kb_16threads.fio --output-format=json --output=/var/log/miztiik-automation-apps-${_b}kb_16threads_${_d}_${_t}.log
+                            printf "End of ${_t} tests\n"
+                        done
                 done
             printf "End of test for device ${_d}\n"
         done
