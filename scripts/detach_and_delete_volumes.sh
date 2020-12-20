@@ -21,10 +21,9 @@ LOG_FILE="${LOG_DIR}miztiik-automation-apps-delete-vol.log"
 
 
 # We will store volume ids in a file to allow for later clean-up
-VOL_IDS_LOG_NAME=${APP_DIR}/fio_vol_ids.log
+VOL_IDS_LOG_NAME="/var/log/fio_vol_ids.log"
 
 function detach_and_delete_vols(){
-    
     for _v in `cat ${VOL_IDS_LOG_NAME}`
         do
             aws ec2 detach-volume --volume-id ${_v} && \

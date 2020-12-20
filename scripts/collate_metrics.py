@@ -71,7 +71,6 @@ def log_processor():
             _temp_result["bw_in_mibs"] = round(
                 _d["jobs"][0]["write"]["bw"]/1024)
             _temp_result["dev"] = _d["jobs"][0]["job options"]["filename"]
-            _temp_result["ebs_type"] = "gp3_iops"
             # Add to global results
             perf_results.append(_temp_result)
             print(_temp_result)

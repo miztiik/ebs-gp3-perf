@@ -38,7 +38,7 @@ AWS_REGION="`echo \"$EC2_AVAIL_ZONE\" | sed 's/[a-z]$//'`"
 export AWS_REGION
 
 # We will store volume ids in a file to allow for later clean-up
-VOL_IDS_LOG_NAME=${APP_DIR}/fio_vol_ids.log
+VOL_IDS_LOG_NAME="/var/log/fio_vol_ids.log"
 
 ###################################
 #######  1000 MiBs VOLUME  ########

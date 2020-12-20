@@ -45,8 +45,9 @@ cat > '4kb_16threads.fio' << "EOF"
 [4kb_16threads]
 filename=${DEV_ID}
 direct=1
+ioengine=libaio
 rw=${TEST_MODE}
-bs=16k
+bs=4k
 size=1G
 numjobs=16
 time_based=1
@@ -59,8 +60,9 @@ cat > '8kb_16threads.fio' << "EOF"
 [8kb_16threads]
 filename=${DEV_ID}
 direct=1
+ioengine=libaio
 rw=${TEST_MODE}
-bs=16k
+bs=8k
 size=1G
 numjobs=16
 time_based=1
@@ -73,6 +75,7 @@ cat > '16kb_16threads.fio' << "EOF"
 [16kb_16threads]
 filename=${DEV_ID}
 direct=1
+ioengine=libaio
 rw=${TEST_MODE}
 bs=16k
 size=1G
@@ -87,6 +90,7 @@ cat > '32kb_16threads.fio' << "EOF"
 [32kb_16threads]
 filename=${DEV_ID}
 direct=1
+ioengine=libaio
 rw=${TEST_MODE}
 bs=32k
 size=1G
@@ -101,6 +105,7 @@ cat > '64kb_16threads.fio' << "EOF"
 [64kb_16threads]
 filename=${DEV_ID}
 direct=1
+ioengine=libaio
 rw=${TEST_MODE}
 bs=64k
 size=1G
@@ -115,6 +120,7 @@ cat > '128kb_16threads.fio' << "EOF"
 [128kb_16threads]
 filename=${DEV_ID}
 direct=1
+ioengine=libaio
 rw=${TEST_MODE}
 bs=128k
 size=1G
@@ -129,6 +135,7 @@ cat > '256kb_16threads.fio' << "EOF"
 [256kb_16threads]
 filename=${DEV_ID}
 direct=1
+ioengine=libaio
 rw=${TEST_MODE}
 bs=256k
 size=1G
