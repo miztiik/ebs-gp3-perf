@@ -102,17 +102,15 @@ Thank you for your interest in contributing to our project. Whether it is a bug 
 
 1. [Average throughput and number of IOPS][4]
 
-1. [I/O characteristics and monitoring][5]
+1. [EBS I/O characteristics and monitoring][5]
 
 1. [Benchmark EBS volumes][6]
 
 1. [Block Volume Performance Tests on Linux][7]
 
+1. [Block Volume Performance Benchmarkwith with multiple threads][8]
 
-
-
-
-1. [Apache Lucene - Query Parser Syntax][8]
+1. [Inspecting disk IO performance with fio][9]
 
 ### 🏷️ Metadata
 
@@ -127,9 +125,8 @@ Thank you for your interest in contributing to our project. Whether it is a bug 
 [5]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-io-characteristics.html
 [6]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/benchmark_procedures.html
 [7]: https://docs.cloud.oracle.com/en-us/iaas/Content/Block/References/samplefiocommandslinux.htm
-
-[10]: https://cloud.netapp.com/blog/optimizing-aws-ebs-usage-tips
-[11]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Dashboards.html
+[8]: https://www.scalebench.com/blog/index.php/2020/06/03/aws-ebs-vs-aws-instance-storelocal-disk-storage/
+[9]: https://www.linux.com/training-tutorials/inspecting-disk-io-performance-fio/
 
 [100]: https://www.udemy.com/course/aws-cloud-security/?referralCode=B7F1B6C78B45ADAF77A9
 [101]: https://www.udemy.com/course/aws-cloud-security-proactive-way/?referralCode=71DC542AD4481309A441
