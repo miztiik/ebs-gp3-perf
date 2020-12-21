@@ -17,7 +17,7 @@
       {
         "learn_aws_advanced_security": "https://www.udemy.com/course/aws-cloud-security-proactive-way"
       },
-      { "service_name": "ebs-gp3-perf" },
+      { "project": "ebs-gp3-perf" },
       {
         "github_repo_url": "https://github.com/miztiik/ebs-gp3-perf"
       }
